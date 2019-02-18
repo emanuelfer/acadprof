@@ -85,7 +85,7 @@ public class TelaExcluirAluno extends javax.swing.JInternalFrame {
             return;
         }
         
-        if (JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja excluir o aluno: "+a.getNome()+"?", "Atenção",   JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+        if (JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja excluir o aluno: "+a.getNome()+" de matrícula:"+a.getMatricula()+"?", "Atenção",   JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
             JOptionPane.showMessageDialog(null, c.deletar(a));
         }
         this.txtMatt.setText("");

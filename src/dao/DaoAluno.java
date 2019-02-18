@@ -25,7 +25,7 @@ import model.Turma;
 public class DaoAluno {
     private Connection con;
     
-    public void create(String comando, ArrayList<String> parametros){
+    public boolean create(String comando, ArrayList<String> parametros){
         this.con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -37,10 +37,11 @@ public class DaoAluno {
             stmt.executeUpdate();
             
         } catch (SQLException e) {  
-            JOptionPane.showMessageDialog(null, "Erro ao inserir aluno: " + e.getMessage());
+            return false;
         } finally {  
             ConnectionFactory.closeConnection(con, stmt);  
         }
+        return true;
     }
     
     

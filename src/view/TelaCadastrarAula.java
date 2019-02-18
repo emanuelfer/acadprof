@@ -8,7 +8,10 @@ package view;
 import controller.ControllerAula;
 import controller.ControllerDisciplina;
 import controller.ControllerTurma;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Disciplina;
 import model.Professor;
@@ -126,7 +129,7 @@ public class TelaCadastrarAula extends javax.swing.JInternalFrame {
         }
 
         try {
-            txtHorario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##h## - ##h##")));
+            txtHorario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##h##-##h##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -289,8 +292,15 @@ public class TelaCadastrarAula extends javax.swing.JInternalFrame {
         Disciplina disciplina = cd.busca((String)cbDisciplinas.getSelectedItem());
         int idTurma = cbCurso.getSelectedIndex() + 1;
         ControllerAula ca = new ControllerAula();
-        String mensagem = ca.create(conteudo, data, horario, disciplina.getId(), turma.getId(), professor);
-        JOptionPane.showMessageDialog(null, mensagem);
+        String mensagem;
+        try {
+            mensagem = ca.create(conteudo, data, horario, disciplina.getId(), turma.getId(), professor);
+            JOptionPane.showMessageDialog(null, mensagem);
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaCadastrarAula.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar aula!");
+        }
+        
        
     }//GEN-LAST:event_btnCadastrarAulaActionPerformed
 

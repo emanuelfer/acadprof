@@ -86,7 +86,7 @@ public class TelaExcluirProfessor extends javax.swing.JInternalFrame {
             return;
         }
 
-        if (JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja excluir o professor: "+a.getNome()+"?", "Atenção",   JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+        if (JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja excluir o professor: "+a.getNome()+" de CPF:"+a.getCPF()+"?", "Atenção",   JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
             JOptionPane.showMessageDialog(null, c.deletar(a));
         }
         this.txtCpf.setText("");

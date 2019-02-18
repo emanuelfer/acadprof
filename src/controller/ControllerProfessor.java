@@ -67,6 +67,16 @@ public class ControllerProfessor {
            errors = errors+"<b>Campo cpf não pode ficar vazio</b><br>";
        }
        
+       if(cpf.length()>11)
+           return "O CPF deve conter apenas 11 dígitos!";
+           
+       for (int i = 0; i < cpf.length(); i++) {
+            if (!Character.isDigit(cpf.charAt(i))) {
+               return "Digete apenas números para o CPF";
+            }
+            
+         }
+       
        if(hasError){
            result = "<html><p>Erro:</p>"+errors+"</html>";
            return result;

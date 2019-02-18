@@ -29,6 +29,23 @@ public class ControllerAluno {
         if(nome.isEmpty() || CPF.isEmpty() || matricula.isEmpty()){
             return "Preencha todos os campos!";
         }
+        
+        if(CPF.length()>11)
+           return "O CPF deve conter apenas 11 dígitos!";
+        
+        for (int i = 0; i < CPF.length(); i++) {
+            if (!Character.isDigit(CPF.charAt(i))) {
+               return "Digete apenas números para o CPF!";
+            } 
+         }
+        
+        for (int i = 0; i < matricula.length(); i++) {
+            if (!Character.isDigit(matricula.charAt(i))) {
+               return "Digete apenas números para a matricula!";
+            } 
+         }
+
+
         ControllerTurma ct = new ControllerTurma();
         Turma turma = ct.busca(idTurma);
         
@@ -40,8 +57,10 @@ public class ControllerAluno {
         parametros.add(Integer.toString(idTurma));
         parametros.add(nome);
         DaoAluno da = new DaoAluno();
-        da.create(comando, parametros);
-        return "Aluno cadastrado!";
+        if(da.create(comando, parametros))
+            return "Aluno cadastrado!";
+        else
+            return "Erro ao cadastrar aluno!";
     }
     
     public Aluno bucsca(int id){
