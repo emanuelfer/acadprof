@@ -30,6 +30,10 @@ public class ControllerAvaliacao {
         if(nota>10.0){
             return "A nota máxima é 10!";
         }
+        if(parecer.length()>255){
+            return "O número máximo de caracteres é 255!";
+        }
+            
         
         Date data = new Date();
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
@@ -41,8 +45,11 @@ public class ControllerAvaliacao {
         parametros.add(Integer.toString(aluno.getId()));
         parametros.add(Integer.toString(idAula));
         DaoAvaliacao da = new DaoAvaliacao();
-        da.avaliar(comando, parametros);
-        return "Aula avaliada!";
+        
+        if(da.avaliar(comando, parametros))
+            return "Aula avaliada!";
+        else
+            return "Erro ao avaliar aula!";
     }
     
     public Avaliacao busca(Aula aula, Aluno aluno){

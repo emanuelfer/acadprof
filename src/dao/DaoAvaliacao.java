@@ -30,7 +30,7 @@ import model.Turma;
 public class DaoAvaliacao {
     private Connection con;
     
-    public void avaliar(String comando, ArrayList<String> parametros){
+    public boolean avaliar(String comando, ArrayList<String> parametros){
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -42,10 +42,11 @@ public class DaoAvaliacao {
             stmt.executeUpdate();
             
         } catch (SQLException e) {  
-            JOptionPane.showMessageDialog(null, "Erro ao iserir avaliação: " + e.getMessage());
+            return false;
         } finally {  
             ConnectionFactory.closeConnection(con, stmt);  
         }
+        return true;
     }
     
     public Avaliacao busca(String comando, ArrayList<String> parametros) {  
