@@ -167,7 +167,7 @@ public class TelaPrincipalProfessor extends javax.swing.JFrame {
 
     private void acessarAvaliacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acessarAvaliacoesActionPerformed
         // TODO add your handling code here:
-        this.telaAcessarAvaliacoes = new TelaAcessarAvaliacoes(this.professor);
+        this.telaAcessarAvaliacoes = new TelaAcessarAvaliacoes(this.professor, this.gerenciadorDeTelas);
         this.gerenciadorDeTelas.abrirJanelas(telaAcessarAvaliacoes);
     }//GEN-LAST:event_acessarAvaliacoesActionPerformed
 

@@ -10,6 +10,7 @@ import controller.ControllerAvaliacao;
 import controller.ControllerCurso;
 import controller.ControllerDisciplina;
 import controller.ControllerTurma;
+import gerenciartelas.GerenciadorDeTelas;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -25,11 +26,16 @@ import model.Turma;
  */
 public class TelaAcessarAvaliacoes extends javax.swing.JInternalFrame {
     private Professor professor;
+    private TelaAvaliacao telaAvaliacao;
+    
+    private GerenciadorDeTelas gerenciadorDeTelas;
     /**
      * Creates new form TelaAcessarAvaliações
      */
-    public TelaAcessarAvaliacoes(Professor professor) {
+    public TelaAcessarAvaliacoes(Professor professor, GerenciadorDeTelas gerenciadorDeTelas) {
         initComponents();
+        this.gerenciadorDeTelas = gerenciadorDeTelas;
+        
         this.professor = professor;
         
         ControllerTurma ct = new ControllerTurma();
@@ -84,6 +90,11 @@ public class TelaAcessarAvaliacoes extends javax.swing.JInternalFrame {
                 "Turma", "Disciplina", "Conteúdo", "Data", "Nota", "Parecer"
             }
         ));
+        tableAvaliacao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableAvaliacaoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableAvaliacao);
 
         cbModalidade.addItemListener(new java.awt.event.ItemListener() {
@@ -397,6 +408,21 @@ public class TelaAcessarAvaliacoes extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_btnBuscarAulaActionPerformed
+
+    private void tableAvaliacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAvaliacaoMouseClicked
+        // TODO add your handling code here:
+        int row = tableAvaliacao.getSelectedRow();
+        
+        String turma = tableAvaliacao.getValueAt(row, 0).toString();
+        String disciplina = (String)tableAvaliacao.getValueAt(row, 1);
+        String conteudo = (String)tableAvaliacao.getValueAt(row, 2);
+        String data = tableAvaliacao.getValueAt(row, 3).toString();
+        String nota = tableAvaliacao.getValueAt(row, 4).toString();
+        String parecer = (String)tableAvaliacao.getValueAt(row, 5);
+
+        telaAvaliacao = new TelaAvaliacao(turma, disciplina, conteudo, data, nota, parecer);
+        this.gerenciadorDeTelas.abrirJanelas(telaAvaliacao);
+    }//GEN-LAST:event_tableAvaliacaoMouseClicked
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
