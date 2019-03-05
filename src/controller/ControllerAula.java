@@ -26,12 +26,15 @@ public class ControllerAula {
         if(conteudo.isEmpty() || data.isEmpty() || horario.isEmpty()){
             return "Preencha todos os campos!";
         }
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date d = formatter.parse(data);
-        if(new Date().before(d)){
-            return "Data inválida !";
-        }
+        
         try{
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            
+            Date d = formatter.parse(data);
+            if(new Date().before(d)){
+                return "Data inválida !";
+            }
+            
            String[] h = horario.split("-");
            int inicioH = Integer.parseInt(h[0].split("h")[0]);
            int inicioM = Integer.parseInt(h[0].split("h")[1]);

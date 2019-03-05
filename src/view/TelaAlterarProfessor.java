@@ -51,6 +51,11 @@ public class TelaAlterarProfessor extends javax.swing.JInternalFrame {
         txtGraduacao = new javax.swing.JTextField();
 
         setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setTitle("Alterar Professor");
+        setToolTipText("");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Digite o Cpf do professor:");
