@@ -241,6 +241,10 @@ public class TelaCadastrarAluno extends javax.swing.JInternalFrame {
         ControllerAluno ca = new ControllerAluno();
         String mensagem = ca.salvar(nome, CPF, matricula, turma.getId());
         JOptionPane.showMessageDialog(null, mensagem);
+        
+        txtNome.setText("");
+        txtCPF.setText("");
+        txtMatricula.setText("");
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void cbModalidadeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbModalidadeItemStateChanged

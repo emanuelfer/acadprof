@@ -184,7 +184,7 @@ public class TelaAcessarAulas extends javax.swing.JInternalFrame {
             String semestre = (String)tableAvaliacao.getValueAt(row, 6);
             
             if(telaAvaliarAula == null){
-                telaAvaliarAula = new TelaAvaliarAula(idAula, disciplina, conteudo, professor, data, horario, semestre, this.aluno);
+                telaAvaliarAula = new TelaAvaliarAula(idAula, disciplina, conteudo, professor, data, horario, semestre, this.aluno, this);
                 this.gerenciadorDeTelas.abrirJanelas(telaAvaliarAula);
             }else{
                 this.gerenciadorDeTelas.abrirJanelas(telaAvaliarAula);

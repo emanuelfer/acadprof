@@ -21,12 +21,14 @@ public class TelaAvaliarAula extends javax.swing.JInternalFrame {
     private String horario;
     private String semestre;
     private Aluno aluno;
+    private TelaAcessarAulas telaAcessarAulas;
     /**
      * Creates new form TelaAvaliarAula
      */
-    public TelaAvaliarAula(int idAula, String disciplina,String  conteudo,String  professor,String  data, String horario,String  semestre, Aluno aluno) {
+    public TelaAvaliarAula(int idAula, String disciplina,String  conteudo,String  professor,String  data, String horario,String  semestre, Aluno aluno, TelaAcessarAulas telaAcessarAulas) {
         initComponents();
         
+        this.telaAcessarAulas = telaAcessarAulas;
         this.idAula = idAula;
         this.disciplina = disciplina;
         this.conteudo = conteudo;
@@ -241,6 +243,8 @@ public class TelaAvaliarAula extends javax.swing.JInternalFrame {
             ControllerAvaliacao ca = new ControllerAvaliacao();
             String mensagem = ca.avaliar(idAula, nota, parecer, disciplina, conteudo, horario, semestre, aluno);
             JOptionPane.showMessageDialog(null, mensagem);
+            this.setVisible(false);
+            this.telaAcessarAulas.dispose();
         }catch(NumberFormatException nfe){
             JOptionPane.showMessageDialog(null, "Você precisa digitar uma nota!");
         }

@@ -184,7 +184,7 @@ public class TelaAlterarAluno extends javax.swing.JInternalFrame {
                                         .addGroup(pnAlterarLayout.createSequentialGroup()
                                             .addComponent(txtCPF)
                                             .addGap(118, 118, 118))))))
-                        .addContainerGap(32, Short.MAX_VALUE))
+                        .addContainerGap(33, Short.MAX_VALUE))
                     .addGroup(pnAlterarLayout.createSequentialGroup()
                         .addGroup(pnAlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
@@ -237,7 +237,7 @@ public class TelaAlterarAluno extends javax.swing.JInternalFrame {
                 .addGroup(pnAlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(btnAlterar)
                 .addGap(19, 19, 19))
         );
@@ -255,20 +255,21 @@ public class TelaAlterarAluno extends javax.swing.JInternalFrame {
                 .addComponent(btnPesquisar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(95, Short.MAX_VALUE)
                 .addComponent(pnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99))
+                .addGap(92, 92, 92))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtMatriculaPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPesquisar))
                 .addGap(18, 18, 18)
-                .addComponent(pnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(pnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -306,53 +307,20 @@ public class TelaAlterarAluno extends javax.swing.JInternalFrame {
         this.pnAlterar.setVisible(true);
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
-    private void cbAnoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbAnoItemStateChanged
-        ControllerTurma ct = new ControllerTurma();
-        ArrayList<Turma> turmas = ct.busca((String)cbCurso.getSelectedItem(), (String)cbModalidade.getSelectedItem(), (String)cbAno.getSelectedItem());
-
-        cbTurno.removeAllItems();
-        for(int i = 0; i< turmas.size(); i++){
-            cbTurno.addItem(turmas.get(i).getTurno());
-        }
-    }//GEN-LAST:event_cbAnoItemStateChanged
-
-    private void cbAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAnoActionPerformed
+    private void cbModalidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbModalidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbAnoActionPerformed
+    }//GEN-LAST:event_cbModalidadeActionPerformed
 
-    private void cbTurnoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbTurnoItemStateChanged
+    private void cbModalidadeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbModalidadeItemStateChanged
         // TODO add your handling code here:
         ControllerTurma ct = new ControllerTurma();
-        ArrayList<Turma> turmas = ct.busca((String)cbCurso.getSelectedItem(), (String)cbModalidade.getSelectedItem(), (String)cbAno.getSelectedItem(), (String)cbTurno.getSelectedItem());
+        ArrayList<Turma> turmas = ct.busca((String)cbCurso.getSelectedItem(), (String)cbModalidade.getSelectedItem());
 
-        cbCodigo.removeAllItems();
+        cbAno.removeAllItems();
         for(int i = 0; i< turmas.size(); i++){
-            cbCodigo.addItem(turmas.get(i).getCodigo());
+            cbAno.addItem(turmas.get(i).getAno());
         }
-    }//GEN-LAST:event_cbTurnoItemStateChanged
-
-    private void cbTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTurnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbTurnoActionPerformed
-
-    private void cbCursoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCursoItemStateChanged
-        // TODO add your handling code here:
-        ControllerTurma ct = new ControllerTurma();
-        ArrayList<Turma> turmas = ct.busca((String)cbCurso.getSelectedItem());
-
-        cbModalidade.removeAllItems();
-        for(int i = 0; i< turmas.size(); i++){
-            cbModalidade.addItem(turmas.get(i).getModalidade());
-        }
-    }//GEN-LAST:event_cbCursoItemStateChanged
-
-    private void cbCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCursoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbCursoActionPerformed
-
-    private void cbCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbCodigoActionPerformed
+    }//GEN-LAST:event_cbModalidadeItemStateChanged
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         // TODO add your handling code here:
@@ -369,20 +337,53 @@ public class TelaAlterarAluno extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(null, mensagem);
     }//GEN-LAST:event_btnAlterarActionPerformed
 
-    private void cbModalidadeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbModalidadeItemStateChanged
+    private void cbCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbCodigoActionPerformed
+
+    private void cbCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbCursoActionPerformed
+
+    private void cbCursoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCursoItemStateChanged
         // TODO add your handling code here:
         ControllerTurma ct = new ControllerTurma();
-        ArrayList<Turma> turmas = ct.busca((String)cbCurso.getSelectedItem(), (String)cbModalidade.getSelectedItem());
+        ArrayList<Turma> turmas = ct.busca((String)cbCurso.getSelectedItem());
 
-        cbAno.removeAllItems();
+        cbModalidade.removeAllItems();
         for(int i = 0; i< turmas.size(); i++){
-            cbAno.addItem(turmas.get(i).getAno());
+            cbModalidade.addItem(turmas.get(i).getModalidade());
         }
-    }//GEN-LAST:event_cbModalidadeItemStateChanged
+    }//GEN-LAST:event_cbCursoItemStateChanged
 
-    private void cbModalidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbModalidadeActionPerformed
+    private void cbTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTurnoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbModalidadeActionPerformed
+    }//GEN-LAST:event_cbTurnoActionPerformed
+
+    private void cbTurnoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbTurnoItemStateChanged
+        // TODO add your handling code here:
+        ControllerTurma ct = new ControllerTurma();
+        ArrayList<Turma> turmas = ct.busca((String)cbCurso.getSelectedItem(), (String)cbModalidade.getSelectedItem(), (String)cbAno.getSelectedItem(), (String)cbTurno.getSelectedItem());
+
+        cbCodigo.removeAllItems();
+        for(int i = 0; i< turmas.size(); i++){
+            cbCodigo.addItem(turmas.get(i).getCodigo());
+        }
+    }//GEN-LAST:event_cbTurnoItemStateChanged
+
+    private void cbAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbAnoActionPerformed
+
+    private void cbAnoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbAnoItemStateChanged
+        ControllerTurma ct = new ControllerTurma();
+        ArrayList<Turma> turmas = ct.busca((String)cbCurso.getSelectedItem(), (String)cbModalidade.getSelectedItem(), (String)cbAno.getSelectedItem());
+
+        cbTurno.removeAllItems();
+        for(int i = 0; i< turmas.size(); i++){
+            cbTurno.addItem(turmas.get(i).getTurno());
+        }
+    }//GEN-LAST:event_cbAnoItemStateChanged
 
     int idAluno;
     // Variables declaration - do not modify//GEN-BEGIN:variables

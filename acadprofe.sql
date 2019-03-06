@@ -61,7 +61,7 @@ CREATE TABLE `aluno` (
   UNIQUE KEY `matricula_UNIQUE` (`matricula`),
   KEY `idTurma_idx` (`idTurma`),
   CONSTRAINT `idTurmaAluno` FOREIGN KEY (`idTurma`) REFERENCES `turma` (`idTurma`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `aluno` (
 
 LOCK TABLES `aluno` WRITE;
 /*!40000 ALTER TABLE `aluno` DISABLE KEYS */;
-INSERT INTO `aluno` VALUES (4,'Gabriel','1','456',1,'d6ee4e61af68a10f9bb9ee130313881f'),(5,'Guilherme','2','789',1,'192309aaddc500140db28668e1bbd8b5'),(6,'emanuel','3','5',2,'a80e1c212420901edde8bbeb64037593'),(7,'pedro','4','852',1,'c6cc8094c2dc07b700ffcc36d64e2138'),(8,'david','5','9654',1,'172522ec1028ab781d9dfd17eaca4427'),(9,'alexsandro','6','8987415',2,'902e3ffe40f2835d204a0e74ad0fcc1f'),(10,'debora','7','8888',3,'e99169dde5ede114db67001ca047a974'),(11,'elias','8','1177',1,'29a2b2e1849474d94d12051309c7b4d7'),(12,'lucas','9','255555',2,'dc53fc4f621c80bdc2fa0329a6123708'),(14,'Vitoria','10','24',3,'abd7a6ff9dede06a043127c2de751d56'),(15,'thayla','11','99997',3,'b7f79191bf741a8b14f592113af411b1'),(17,'felipe','12','5596',4,'7e04da88cbb8cc933c7b89fbfe121cca'),(18,'milan','13','130',4,'83227a721a3363d2c78381664c78657f');
+INSERT INTO `aluno` VALUES (4,'Gabriel','1','456',1,'d6ee4e61af68a10f9bb9ee130313881f'),(5,'Guilherme','2','789',1,'192309aaddc500140db28668e1bbd8b5'),(6,'emanuel','3','5',2,'a80e1c212420901edde8bbeb64037593'),(7,'pedro','4','852',1,'c6cc8094c2dc07b700ffcc36d64e2138'),(8,'david','5','9654',1,'172522ec1028ab781d9dfd17eaca4427'),(9,'alexsandro','6','8987415',2,'902e3ffe40f2835d204a0e74ad0fcc1f'),(10,'debora','7','8888',3,'e99169dde5ede114db67001ca047a974'),(11,'elias','8','1177',1,'29a2b2e1849474d94d12051309c7b4d7'),(12,'lucas','9','255555',2,'dc53fc4f621c80bdc2fa0329a6123708'),(14,'Vitoria','10','24',3,'abd7a6ff9dede06a043127c2de751d56'),(15,'thayla','11','99997',3,'b7f79191bf741a8b14f592113af411b1'),(17,'felipe','12','5596',4,'7e04da88cbb8cc933c7b89fbfe121cca'),(18,'milan','13','130',4,'83227a721a3363d2c78381664c78657f'),(19,'livia','14           ','14984849848',2,'57dc918daf619fb0f4b84560b1d419a2'),(24,'daniel','15','49849849849',2,'aa47f8215c6f30a0dcdb2a36a9f4168e'),(25,'perola','16','55555555555',4,'b121bde6ba124e53699fb61aa4c4dd46'),(26,'aragao','17','15777',3,'9f96583dfc1dc542af88c9cd40fd2fb3'),(27,'cristian lima','18','78585854',4,'b08c8c585b6d67164c163767076445d6');
 /*!40000 ALTER TABLE `aluno` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,7 @@ CREATE TABLE `aula` (
   CONSTRAINT `idDisciplinaAula` FOREIGN KEY (`idDisciplina`) REFERENCES `disciplina` (`idDisciplina`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `idProfessor` FOREIGN KEY (`idProfessor`) REFERENCES `professor` (`idProfessor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `idTurma` FOREIGN KEY (`idTurma`) REFERENCES `turma` (`idTurma`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,7 +106,7 @@ CREATE TABLE `aula` (
 
 LOCK TABLES `aula` WRITE;
 /*!40000 ALTER TABLE `aula` DISABLE KEYS */;
-INSERT INTO `aula` VALUES (1,'07h15 - 08h55','01/02/2019','2019.1	','Herança',1,2,1),(2,'08h55 - 10h35','01/02/2019','2019.1	','HTML básico',2,2,1),(3,'07h15 - 08h55','30/01/2019','2019.1	','Polimorfismo',1,1,1),(4,'07h15 - 08h55','03/02/2019','2019.1','Introdução à Química Orgânica',4,3,3),(5,'08h55 - 10h35','02/02/2019','2019.1','Reações Orgânicas',4,3,3),(6,'07h15 - 08h55','03/02/2019','2019.1','Inequação do Primeiro Grau',3,3,4),(7,'07h15 - 08h55','06/02/2019','2019.1','Design Responsivo',2,2,2),(8,'07h15 - 08h55','07/02/2019','2019.1','Conjuntos',3,1,4),(9,'13h15 - 16h30','14/02/2019','2019.1','Portas lógicas',5,4,8),(10,'07h15 - 08h55','14/02/2019','2019.1','Introdução ao arduino',6,4,8);
+INSERT INTO `aula` VALUES (1,'07h15 - 08h55','01/02/2019','2019.1	','Herança',1,2,1),(2,'08h55 - 10h35','01/02/2019','2019.1	','HTML básico',2,2,1),(3,'07h15 - 08h55','30/01/2019','2019.1	','Polimorfismo',1,1,1),(4,'07h15 - 08h55','03/02/2019','2019.1','Introdução à Química Orgânica',4,3,3),(5,'08h55 - 10h35','02/02/2019','2019.1','Reações Orgânicas',4,3,3),(6,'07h15 - 08h55','03/02/2019','2019.1','Inequação do Primeiro Grau',3,3,4),(7,'07h15 - 08h55','06/02/2019','2019.1','Design Responsivo',2,2,2),(8,'07h15 - 08h55','07/02/2019','2019.1','Conjuntos',3,1,4),(9,'13h15 - 16h30','14/02/2019','2019.1','Portas lógicas',5,4,8),(10,'07h15 - 08h55','14/02/2019','2019.1','Introdução ao arduino',6,4,8),(11,'08h55-10h35','15/02/2019','2019.1','asdfasd',3,1,4),(12,'08h60-10h35','15/02/2019','2019.1','asdfsad',3,1,4),(13,'07h15-08h55','18/02/2019','2019.1','Cabeamento',7,2,9),(14,'07h15-08h55','18/02/2019','2019.1','Princípios básicos da OO',1,2,9),(15,'08h15-08h30','05/03/2019','2019.1','PFC',3,1,4),(16,'07h15-08h55','06/03/2019','2019.1','Reações orgânicas',4,4,5),(17,'13h15-20h00','06/03/2019','2019.1','Cojunto Complementar',3,3,4);
 /*!40000 ALTER TABLE `aula` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +120,7 @@ DROP TABLE IF EXISTS `avaliacao`;
 CREATE TABLE `avaliacao` (
   `idAvaliacao` int(11) NOT NULL AUTO_INCREMENT,
   `nota` double NOT NULL,
-  `parecer` varchar(45) NOT NULL,
+  `parecer` varchar(255) NOT NULL,
   `data` varchar(45) NOT NULL,
   `idAluno` int(11) NOT NULL,
   `idAula` int(11) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE `avaliacao` (
   KEY `idAvaliacaoAula_idx` (`idAula`),
   CONSTRAINT `idAluno` FOREIGN KEY (`idAluno`) REFERENCES `aluno` (`idAluno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `idAula` FOREIGN KEY (`idAula`) REFERENCES `aula` (`idAula`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,7 +138,7 @@ CREATE TABLE `avaliacao` (
 
 LOCK TABLES `avaliacao` WRITE;
 /*!40000 ALTER TABLE `avaliacao` DISABLE KEYS */;
-INSERT INTO `avaliacao` VALUES (1,10,'muito boa','01/02/2018',6,1),(2,7,'Aula média','01/02/2018',6,2),(3,5,'Faltou explicar melhor','01/02/2019',5,3),(4,8.9,'Razoável','02/02/2019',4,3),(5,7.8,'Faltou mostrar mais exemplos práticos','03/02/2019',8,3),(6,10,'adjasdf','03/02/2019',9,1),(7,8.9,'Foi legal.','06/02/2019',10,4),(8,10,'Aula de qualidade.','06/02/2019',12,7),(9,10,'Ribamar é fera!','08/02/2019',5,8),(10,5.5,'Gostei não, professor!','09/02/2019',15,4),(11,8.6,'Muito bem exemplificada!','14/02/2019',17,9),(12,10,'Perfeita!','14/02/2019',17,10),(13,10,'gostei','14/02/2019',18,9),(14,7,'É o mínimo que se espera!','14/02/2019',18,10);
+INSERT INTO `avaliacao` VALUES (1,10,'muito boa','01/02/2018',6,1),(2,7,'Aula média','01/02/2018',6,2),(3,5,'Faltou explicar melhor','01/02/2019',5,3),(4,8.9,'Razoável','02/02/2019',4,3),(5,7.8,'Faltou mostrar mais exemplos práticos','03/02/2019',8,3),(6,10,'adjasdf','03/02/2019',9,1),(7,8.9,'Foi legal.','06/02/2019',10,4),(8,10,'Aula de qualidade.','06/02/2019',12,7),(9,10,'Ribamar é fera!','08/02/2019',5,8),(10,5.5,'Gostei não, professor!','09/02/2019',15,4),(11,8.6,'Muito bem exemplificada!','14/02/2019',17,9),(12,10,'Perfeita!','14/02/2019',17,10),(13,10,'gostei','14/02/2019',18,9),(14,7,'É o mínimo que se espera!','14/02/2019',18,10),(15,8.9,'Aula ótima!','18/02/2019',24,14),(16,10,'Entendi tudo!','18/02/2019',24,13),(17,7,'Aula muito rápida!','18/02/2019',19,14),(18,9,'Altas ondas!','18/02/2019',19,13),(19,8.5,'Aula excepcional, apesar de ter sido muto rápida!','04/03/2019',19,2),(20,10,'Aula cansativa, mas compreendi tudo.','06/03/2019',27,16),(21,8.5,'dormi a aula toda, desculpa :/','06/03/2019',25,16),(22,7,'legalzinha!','06/03/2019',25,9),(23,10,'Muito boa.','06/03/2019',25,10),(24,10,'boa','06/03/2019',27,9),(25,10,'Explanação perfeita!','06/03/2019',10,6),(26,8,'Fiquei triste quando terminou :(','06/03/2019',10,17),(27,10,'já sabia tudo','06/03/2019',26,6),(28,10,'muito fácil, tente dificultar','06/03/2019',26,17);
 /*!40000 ALTER TABLE `avaliacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,7 +213,7 @@ CREATE TABLE `disciplina` (
   PRIMARY KEY (`idDisciplina`),
   KEY `idDepartamentoDisciplina_idx` (`idDepartamento`),
   CONSTRAINT `idDepartamentoDisciplina` FOREIGN KEY (`idDepartamento`) REFERENCES `departamento` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,7 +222,7 @@ CREATE TABLE `disciplina` (
 
 LOCK TABLES `disciplina` WRITE;
 /*!40000 ALTER TABLE `disciplina` DISABLE KEYS */;
-INSERT INTO `disciplina` VALUES (1,'Progamação Orientada a Objetos','POO',1),(2,'Autoria Web','AW',1),(3,'Matemática I','MTM',3),(4,'Química III','QM III',2),(5,'Circuitos Digitais I','CDI',4),(6,'Arduino Básico','AB',4);
+INSERT INTO `disciplina` VALUES (1,'Progamação Orientada a Objetos','POO',1),(2,'Autoria Web','AW',1),(3,'Matemática I','MTM',3),(4,'Química III','QM III',2),(5,'Circuitos Digitais I','CDI',4),(6,'Arduino Básico','AB',4),(7,'Rede De Computadores','RC',1);
 /*!40000 ALTER TABLE `disciplina` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -244,7 +244,7 @@ CREATE TABLE `professor` (
   UNIQUE KEY `CPF_UNIQUE` (`CPF`),
   KEY `idDepartamento_idx` (`idDepartamento`),
   CONSTRAINT `idDepartamento` FOREIGN KEY (`idDepartamento`) REFERENCES `departamento` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -253,7 +253,7 @@ CREATE TABLE `professor` (
 
 LOCK TABLES `professor` WRITE;
 /*!40000 ALTER TABLE `professor` DISABLE KEYS */;
-INSERT INTO `professor` VALUES (1,'ulysses','001','Mestre',1,'6a39c2f21e6aaa086eb504e92036c282'),(2,'joao','002','Doutor',1,'dccd96c256bc7dd39bae41a405f25e43'),(3,'marcio','003','Pós-Graduado',2,'1b150854805cbe12194c8dbc55c900cd'),(4,'ribamar','004','Pós-Doutorado',3,'a303eb9e736aff0abbcd03ef1c026b90'),(5,'elaine','005','Mestrado',2,'fb47bb2639a2df6c3b4d36ab33a274ff'),(8,'sergio','006','Mestrado',4,'3bffa4ebdf4874e506c2b12405796aa5');
+INSERT INTO `professor` VALUES (1,'ulysses','001','Mestre',1,'6a39c2f21e6aaa086eb504e92036c282'),(2,'joao','002','Doutor',1,'dccd96c256bc7dd39bae41a405f25e43'),(3,'marcio','003','Pós-Graduado',2,'1b150854805cbe12194c8dbc55c900cd'),(4,'ribamar costa','004','Pós-Doutorado',3,'a303eb9e736aff0abbcd03ef1c026b90'),(5,'elaine','005','Mestrado',2,'fb47bb2639a2df6c3b4d36ab33a274ff'),(8,'sergio','006','Mestrado',4,'3bffa4ebdf4874e506c2b12405796aa5'),(9,'josenildo','007         ','Mestrado',1,'20dfb93c6c51e6e3bbc1bcfb1a56b982');
 /*!40000 ALTER TABLE `professor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -327,4 +327,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-14 12:25:12
+-- Dump completed on 2019-03-06 17:58:12

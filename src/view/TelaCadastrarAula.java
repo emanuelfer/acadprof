@@ -296,6 +296,9 @@ public class TelaCadastrarAula extends javax.swing.JInternalFrame {
         try {
             mensagem = ca.create(conteudo, data, horario, disciplina.getId(), turma.getId(), professor);
             JOptionPane.showMessageDialog(null, mensagem);
+            textConteudo.setText("");
+            txtData.setText("");
+            txtHorario.setText("");
         } catch (ParseException ex) {
             Logger.getLogger(TelaCadastrarAula.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar aula!");
