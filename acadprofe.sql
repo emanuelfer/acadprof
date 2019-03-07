@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `administrador`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `administrador` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
+  `nome` varchar(70) NOT NULL,
   `CPF` varchar(45) NOT NULL,
-  `senha` varchar(45) NOT NULL,
+  `senha` varchar(70) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `CPF_UNIQUE` (`CPF`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -51,17 +51,17 @@ DROP TABLE IF EXISTS `aluno`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `aluno` (
   `idAluno` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
+  `nome` varchar(70) NOT NULL,
   `matricula` varchar(45) NOT NULL,
   `CPF` varchar(11) NOT NULL,
   `idTurma` int(11) NOT NULL,
-  `senha` varchar(45) NOT NULL,
+  `senha` varchar(70) NOT NULL,
   PRIMARY KEY (`idAluno`),
   UNIQUE KEY `CPF_UNIQUE` (`CPF`),
   UNIQUE KEY `matricula_UNIQUE` (`matricula`),
   KEY `idTurma_idx` (`idTurma`),
   CONSTRAINT `idTurmaAluno` FOREIGN KEY (`idTurma`) REFERENCES `turma` (`idTurma`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `aluno` (
 
 LOCK TABLES `aluno` WRITE;
 /*!40000 ALTER TABLE `aluno` DISABLE KEYS */;
-INSERT INTO `aluno` VALUES (4,'Gabriel','1','456',1,'d6ee4e61af68a10f9bb9ee130313881f'),(5,'Guilherme','2','789',1,'192309aaddc500140db28668e1bbd8b5'),(6,'emanuel','3','5',2,'a80e1c212420901edde8bbeb64037593'),(7,'pedro','4','852',1,'c6cc8094c2dc07b700ffcc36d64e2138'),(8,'david','5','9654',1,'172522ec1028ab781d9dfd17eaca4427'),(9,'alexsandro','6','8987415',2,'902e3ffe40f2835d204a0e74ad0fcc1f'),(10,'debora','7','8888',3,'e99169dde5ede114db67001ca047a974'),(11,'elias','8','1177',1,'29a2b2e1849474d94d12051309c7b4d7'),(12,'lucas','9','255555',2,'dc53fc4f621c80bdc2fa0329a6123708'),(14,'Vitoria','10','24',3,'abd7a6ff9dede06a043127c2de751d56'),(15,'thayla','11','99997',3,'b7f79191bf741a8b14f592113af411b1'),(17,'felipe','12','5596',4,'7e04da88cbb8cc933c7b89fbfe121cca'),(18,'milan','13','130',4,'83227a721a3363d2c78381664c78657f'),(19,'livia','14           ','14984849848',2,'57dc918daf619fb0f4b84560b1d419a2'),(24,'daniel','15','49849849849',2,'aa47f8215c6f30a0dcdb2a36a9f4168e'),(25,'perola','16','55555555555',4,'b121bde6ba124e53699fb61aa4c4dd46'),(26,'aragao','17','15777',3,'9f96583dfc1dc542af88c9cd40fd2fb3'),(27,'cristian lima','18','78585854',4,'b08c8c585b6d67164c163767076445d6');
+INSERT INTO `aluno` VALUES (4,'Gabriel','1','456',1,'d6ee4e61af68a10f9bb9ee130313881f'),(5,'Guilherme','2','789',1,'192309aaddc500140db28668e1bbd8b5'),(6,'emanuel','3','5',2,'a80e1c212420901edde8bbeb64037593'),(7,'pedro','4','852',1,'c6cc8094c2dc07b700ffcc36d64e2138'),(8,'david','5','9654',1,'172522ec1028ab781d9dfd17eaca4427'),(9,'alexsandro','6','8987415',2,'902e3ffe40f2835d204a0e74ad0fcc1f'),(10,'debora','7','8888',3,'e99169dde5ede114db67001ca047a974'),(11,'elias','8','1177',1,'29a2b2e1849474d94d12051309c7b4d7'),(12,'lucas','9','255555',2,'dc53fc4f621c80bdc2fa0329a6123708'),(14,'Vitoria','10','24',3,'abd7a6ff9dede06a043127c2de751d56'),(15,'thayla','11','99997',3,'b7f79191bf741a8b14f592113af411b1'),(17,'felipe','12','5596',4,'7e04da88cbb8cc933c7b89fbfe121cca'),(18,'milan','13','130',4,'83227a721a3363d2c78381664c78657f'),(19,'livia','14           ','14984849848',2,'57dc918daf619fb0f4b84560b1d419a2'),(24,'daniel','15','49849849849',2,'aa47f8215c6f30a0dcdb2a36a9f4168e'),(25,'perola','16','55555555555',4,'b121bde6ba124e53699fb61aa4c4dd46'),(26,'aragao','17','15777',3,'9f96583dfc1dc542af88c9cd40fd2fb3'),(27,'cristian lima','18','78585854',4,'b08c8c585b6d67164c163767076445d6'),(28,'Emanuel Ferreira','19','232323',1,'cec227daa9a79d64737ec285e22c933e'),(29,'Filipe Passos','20','55658456',4,'11a62a8b11866f3345821a2c0bf73092');
 /*!40000 ALTER TABLE `aluno` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,11 +235,11 @@ DROP TABLE IF EXISTS `professor`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `professor` (
   `idProfessor` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
+  `nome` varchar(70) NOT NULL,
   `CPF` varchar(45) NOT NULL,
   `graduacao` varchar(45) NOT NULL,
   `idDepartamento` int(11) NOT NULL,
-  `senha` varchar(45) NOT NULL,
+  `senha` varchar(70) NOT NULL,
   PRIMARY KEY (`idProfessor`),
   UNIQUE KEY `CPF_UNIQUE` (`CPF`),
   KEY `idDepartamento_idx` (`idDepartamento`),
@@ -327,4 +327,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-06 17:58:12
+-- Dump completed on 2019-03-07 20:46:04
